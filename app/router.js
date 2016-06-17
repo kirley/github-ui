@@ -9,21 +9,15 @@ Router.map(function() {
   this.route('home', function() {
     this.route('mike');
   });
-  this.route('orgs');
-
-  this.route('org', function() {
-    this.route('facebook', function() {
-      this.route('repos');
-
-      this.route('repo', function() {
-        this.route('issues');
-        this.route('contributors');
-      });
+  this.route('orgs');  // /orgs
+  this.route('org', {path: 'org/:id'}, function() {  // /org/emberjs
+    this.route('repos');  // /org/emberjs/repos
+    this.route('repo', {path: ':repoid'}, function() {  // /org/emberjs/ember-data
+      this.route('contributors');
+      this.route('issues');
     });
-    this.route('netflix');
-    this.route('yahoo');
-    this.route('emberjs');
   });
+
 });
 
 export default Router;
