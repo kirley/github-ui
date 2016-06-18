@@ -10,9 +10,8 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    addFavorite(value) {
-      // alert(`hi: ${value}`);
-      this.get('favorites.items').addObject({id: value});
+    addFavorite(org) {
+      this.get('favorites').favoriteItem(org);
     }
   },
 
