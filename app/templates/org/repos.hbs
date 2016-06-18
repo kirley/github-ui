@@ -1,7 +1,10 @@
-<ul>
-  <li>{{link-to 'Calendar UI' 'org.repo.issues' 'calendar-ui'}}</li>
-  <li>{{link-to 'DatePicker UI' 'org.repo.issues' 'datepicker-ui'}}</li>
-  <li>{{link-to 'Accordion UI' 'org.repo.issues' 'accordion-ui'}}</li>
-</ul>
+
+  <ul>
+    {{#each model as |repo|}}
+    <li>{{link-to repo.name 'org.repo' repo.id}}</li>
+    {{else}}
+    <li>Sorry, no repos found!</li>
+    {{/each}}
+  </ul>
 
 {{outlet}}
