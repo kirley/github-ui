@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('orgs', { path: '/' });
+  // this.route('orgs', { path: '/' });
   this.route('orgs');  // /orgs
   this.route('org', {path: 'org/:id'}, function() {  // /org/emberjs
     this.route('repos');  // /org/emberjs/repos
