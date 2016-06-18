@@ -1,8 +1,10 @@
   <h3>My Favorite Orgs</h3>
   <ul>
-    <li>{{link-to 'Jquery' 'org.repos' 'jquery'}}</li>
-    <li>{{link-to 'Ember.js' 'org.repos' 'emberjs'}}</li>
-    <li>{{link-to 'React' 'org.repos' 'react'}}</li>
+    {{#each content as |org|}}
+    <li>{{link-to org.id 'org' org.id}}</li>
+    {{else}}
+    <li>Sorry, no orgs found!</li>
+    {{/each}}
   </ul>
 
 {{outlet}}
