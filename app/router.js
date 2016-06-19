@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('orgs');  // /orgs
   this.route('org', {path: 'org/:id'}, function() {  // /org/emberjs
     this.route('repos');  // /org/emberjs/repos
-    this.route('repo', {path: ':repo_id'}, function() {  // /org/emberjs/ember-data
+    this.route('repo', {path: ':repoid'}, function() {  // /org/emberjs/ember-data
       this.route('contributors');
       this.route('issues');
     });

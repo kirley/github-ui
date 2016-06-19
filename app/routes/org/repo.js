@@ -2,12 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    let orgName = this.modelFor('org').id;
+    let org = this.modelFor('org');
 
-    return $.get(`https://api.github.com/repos/${orgName}/${params.id}`).then(raw => {
-      raw.oldId = raw.id;
-      raw.id = raw.name
-      return raw;
+    return $.get(`https://api.github.com/repos/${org.id}/${params.repoid}?access_token=f4e5c0a21eede1761750a1b325f9d6bba6fbad06`).then(rawRepo => {
+      rawRepo.oldId = rawRepo.id;
+      rawRepo.id = rawRepo.name
+      return rawRepo;
     });
   }
 });

@@ -1,7 +1,7 @@
   <h5>Repositories</h5>
   <ul>
     {{#each model as |repo|}}
-    <li>{{link-to repo.name 'org.repo' repo.id}}</li>
+    <li>{{link-to repo.name 'org.repo.issues' repo.name}}</li>
     {{else}}
     <li>Sorry, no repos found!</li>
     {{/each}}

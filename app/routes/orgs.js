@@ -18,6 +18,8 @@ export default Ember.Route.extend({
   model: function() {
     return [
       {id: "ember-cli"},
+      {id: "luggageforward"},
+      {id: "emberjs"},
       {id: "microsoft"},
       {id: "facebook"}
     ];

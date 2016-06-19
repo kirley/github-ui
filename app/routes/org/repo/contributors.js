@@ -1,19 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
-  // Get the "id" property from the model resolved in the "org" route
-  let orgName = this.modelFor('org').id;
+model(params) {
+  let orgId = Ember.get(this.modelFor('org'), 'login');
+  let repoId = Ember.get(this.modelFor('org.repo'), 'name');
   // Fetch API data
-  return $.get(`https://api.github.com/orgs/${orgName}/repos`).then(raw => {
-                       raw.oldId = raw.id;
-                       raw.id = raw.name
-                       return raw;
-                     });
-  },
-  setupController(controller) {
-  this._super(...arguments);
-  // Make the model resolved in the "org" route available to // this route's template, via a property called "org"
-  controller.set('org', this.modelFor('org'));
+  return $.get(`https://api.github.com/repos/${orgId}/${repoId}/contributors`).then(rawContributors => {
+    return rawContributors.map(rawContributor => {
+        rawContributor.oldId = rawContributor.id;
+        rawContributor.id = rawContributor.name
+        return rawContributor;
+      });
+    });
   }
 });

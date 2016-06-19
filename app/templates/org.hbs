@@ -1,6 +1,9 @@
   {{link-to 'Back to all orgs' 'orgs'}}
 
-  <h3>Org: {{model.name}}</h3>
+  <h3>
+    <img src={{model.avatar_url}} height='48'>
+    <p>{{model.name}}</p>
+  </h3>
 
 
 {{outlet}}

@@ -2,7 +2,7 @@
 
    <ul>
     {{#each model as |contrib|}}
-    <li>{{contrib.name}}</li>
+    <li><img src={{contrib.avatar_url}} height='24'>{{contrib.login}}</li>
     {{else}}
     <li>Sorry, no data found!</li>
     {{/each}}
