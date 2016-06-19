@@ -1,3 +1,11 @@
-  <p>Issues</p>
+ <h4>Issues</h4>
+
+   <ul>
+    {{#each model as |issue|}}
+    <li>{{issue.state}} - {{issue.title}}</li>
+    {{else}}
+    <li>Sorry, no data found!</li>
+    {{/each}}
+  </ul>
 
 {{outlet}}

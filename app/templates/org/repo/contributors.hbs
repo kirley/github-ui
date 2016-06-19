@@ -1,3 +1,11 @@
-  <p>Contributors</p>
+ <h4>Contributors</h4>
+
+   <ul>
+    {{#each model as |contrib|}}
+    <li><img src={{contrib.avatar_url}} height='24'>{{contrib.login}}</li>
+    {{else}}
+    <li>Sorry, no data found!</li>
+    {{/each}}
+  </ul>
 
 {{outlet}}
