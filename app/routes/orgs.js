@@ -17,6 +17,7 @@ export default Ember.Route.extend({
 
   model: function() {
     return [
+      {id: "lugless"},
       {id: "ember-cli"},
       {id: "luggageforward"},
       {id: "emberjs"},
