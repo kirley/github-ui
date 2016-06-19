@@ -12,5 +12,10 @@ model(params) {
         return rawContributor;
       });
     });
+  },
+  actions: {
+    linksToggled(){
+      console.log("Toggled Links");
+    }
   }
 });

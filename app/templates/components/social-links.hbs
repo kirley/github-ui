@@ -1,0 +1,22 @@
+
+<div class="contributor"><img src={{user.avatar_url}} height='24'><h3>{{user.login}}</h3></div>
+{{#unless isExpanded}}
+<span {{action 'toggleLinkSelection'}}>[ Expand ]</span>
+{{else}}
+<span {{action 'toggleLinkSelection'}}> [ Collapse ]</span>
+{{/unless}}
+
+  {{#if isExpanded}}
+    <ul>
+      <li><bold>Contributions: </bold>{{user.contributions}}</li>
+      <li><bold>Homepage: </bold>{{user.contributions}}</li>
+      <li><bold>Admin: </bold>
+        {{#if user.site_admin}}
+          yes
+        {{else}}
+          no
+        {{/if}}
+      </li>
+    </ul>
+  {{/if}}
+{{yield}}

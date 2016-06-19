@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       return new Ember.RSVP.Promise((res,rej) => {
         Ember.run.later(() => {
           res(data);
-        }, 3000);
+        }, 0);
       })
   });
   },
