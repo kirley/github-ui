@@ -5,7 +5,4 @@ export default Ember.Route.extend({
     this._super(...arguments);
     this.transitionTo('org.repos');
   }
-  // redirect: function() {
-  //   this.replaceWith('org.repos');
-  // }
 });

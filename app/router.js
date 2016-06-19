@@ -8,12 +8,14 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   // this.route('orgs', { path: '/' });
   this.route('orgs');  // /orgs
-  this.route('org', {path: 'org/:id'}, function() {  // /org/emberjs
+  this.route('org', {path: 'org/:id'}, function() {
+    // /org/emberjs
     this.route('repos');  // /org/emberjs/repos
     this.route('repo', {path: ':repoid'}, function() {  // /org/emberjs/ember-data
       this.route('contributors');
       this.route('issues');
     });
+    this.route('notfound');
   });
   this.route('notfound',{path: '*path'});
 });
