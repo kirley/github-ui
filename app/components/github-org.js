@@ -1,0 +1,13 @@
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+
+  // Change root element from <div> to <li>
+  tagName: 'li',
+  actions: {
+    addToFavorite() {
+      this.sendAction('add-favorite', this.get('org'));
+    }
+  }
+
+});

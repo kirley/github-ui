@@ -1,7 +1,7 @@
-  <h5>Repositories</h5>
+  <h5>Repositories (forks/watchers)</h5>
   <ul>
-    {{#each model as |repo|}}
-    <li>{{link-to repo.name 'org.repo.issues' repo.name}}</li>
+    {{#each model as |r|}}
+      {{github-repo repo=r}}
     {{else}}
     <li>Sorry, no repos found!</li>
     {{/each}}

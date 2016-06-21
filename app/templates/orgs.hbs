@@ -1,7 +1,7 @@
   <h3>My Favorite Orgs</h3>
   <ul>
-    {{#each content as |org|}}
-    <li><span {{action 'addFavorite' org}}>[ Favorite ] </span>{{link-to org.id 'org' org.id}}</li>
+    {{#each content as |o|}}
+      {{github-org org=o add-favorite="addFavorite"}}
     {{else}}
     <li>Sorry, no orgs found!</li>
     {{/each}}
