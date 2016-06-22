@@ -10,8 +10,12 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    addFavorite(org) {
-      this.get('favorites').favoriteItem(org);
+    favoriteClicked(org) {
+      if (this.get('favorites.items').indexOf(org) < 0) {
+        this.get('favorites').favoriteItem(org);
+      } else {
+        this.get('favorites').unfavoriteItem(org);
+      }
     }
   },
 

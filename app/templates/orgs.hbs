@@ -1,7 +1,7 @@
   <h3>My Favorite Orgs</h3>
   <ul>
     {{#each content as |o|}}
-      {{github-org org=o add-favorite="addFavorite"}}
+      {{github-org org=o click-favorite="favoriteClicked"}}
     {{else}}
     <li>Sorry, no orgs found!</li>
     {{/each}}
