@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   // Change root element from <div> to <li>
   tagName: 'li',
   favorites: Ember.inject.service(),
+  classNames: ['github-org'],
   isFavorited: isInArray('org', 'favorites.items'),
   actions: {
     favoriteWasClicked() {
